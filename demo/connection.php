@@ -1,15 +1,16 @@
 <?php
 class DB
 {
-    protected $servername = 'localhost';
-    protected $username = 'root';
-    protected $password = '';
-    protected $dbname = 'demo_mvc';
     public function getInstance() {
+        $servername = 'localhost';
+        $username = 'root';
+        $password = '';
+        $dbname = 'demo_mvc';
         $con = new mysqli($servername, $username, $password, $dbname);
         if (!$con) {
             die('Could not Connect demo_mvc: ' .mysql_error());
-        }
+        } 
+        echo "Connected successfully";
     }
     public function insert() {
         if(isset($_POST['save'])) {
@@ -42,4 +43,5 @@ class DB
         mysqli_close($con);
     }
 }
+DB::getInstance();
 ?>
