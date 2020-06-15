@@ -1,5 +1,5 @@
 <?php
-  echo "Tiêu đề: $post->title";
+    echo "title: $post->title";
     echo "\n";
-    echo "Nội dung: $post->content";
+    echo "description : $post->description";
 ?>

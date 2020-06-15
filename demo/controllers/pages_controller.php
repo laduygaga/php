@@ -11,7 +11,7 @@ class PagesController extends BaseController
   public function home()
   {
     $data = array(
-      'name' => 'DUY DEP TRAI',
+      'name' => 'NNDUY',
       'age' =>100 
     );
     $this->render('home', $data);
