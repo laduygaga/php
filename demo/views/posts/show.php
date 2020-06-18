@@ -1,5 +1,4 @@
 <?php
-    echo "title: $post->title";
-    echo "\n";
-    echo "description : $post->description";
+    echo "title: $post->title\n";
+    echo "content: $post->content";
 ?>

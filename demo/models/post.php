@@ -1,20 +1,21 @@
 <?php
+require_once('connection.php');
 class Post
 {
   public $id;
   public $title;
-  public $description;
+  public $content;
   // public $image;
   // public $status;
   // public $create_at;
   // public $update_at;
 
-  function __construct($id, $title, $description)
+  function __construct($id, $title, $content)
       // , $image, $static, $create_at, $update_at)
   {
     $this->id = $id;
     $this->title = $title;
-    $this->description = $description;
+    $this->content= $content;
     // $this->image = $image;
     // $this->status = $status;
     // $this->create_at = $create_at;
@@ -28,7 +29,7 @@ class Post
     $req = $db->query('SELECT * FROM posts');
 
     foreach ($req->fetchAll() as $item) {
-        $list[] = new Post($item['id'], $item['title'], $item['description']);
+        $list[] = new Post($item['id'], $item['title'], $item['content']);
            // , $item['image'], $item['status'], $item['create_at'], $item['update_at']);
     }
 
@@ -43,7 +44,7 @@ class Post
 
     $item = $req->fetch();
     if (isset($item['id'])) {
-      return new Post($item['id'], $item['title'], $item['description']);
+      return new Post($item['id'], $item['title'], $item['content']);
     }
     return null;
   }
